@@ -1,0 +1,3 @@
+rootProject.name = 'fantasyMusic'
+
+include ':app'

@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+      "target": "es2015",
+      "jsx": "react",
+      "module": "es2015",
+      "noEmit": true,
+      "moduleResolution": "node",
+      "importHelpers": true,
+      "baseUrl": ".",
+      "lib": [ "es2017" ],
+      "allowSyntheticDefaultImports":true,
+      "paths": {
+        "src/*":["src/*"]
+      }
+    },
+    "include": [
+        "src"
+    ],
+    "exclude": [
+      "node_modules"
+    ]
+}

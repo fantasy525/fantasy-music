@@ -1,0 +1,41 @@
+{
+  "name": "fantasyMusic",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "build": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.bundle",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@types/react-redux": "^7.0.1",
+    "axios": "^0.18.0",
+    "lottie-react-native": "^2.5.11",
+    "querystring": "^0.2.0",
+    "react": "16.6.3",
+    "react-native": "0.58.1",
+    "react-native-gesture-handler": "^1.0.15",
+    "react-native-sound": "./library/react-native-sound",
+    "react-navigation": "^3.0.9",
+    "react-redux": "^6.0.0",
+    "redux": "^4.0.1",
+    "redux-promise": "^0.6.0",
+    "redux-thunk": "^2.3.0",
+    "tslib": "^1.9.3"
+  },
+  "devDependencies": {
+    "@types/react": "^16.7.21",
+    "@types/react-native": "^0.57.32",
+    "@types/react-navigation": "^3.0.1",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "24.0.0",
+    "jest": "24.0.0",
+    "metro-react-native-babel-preset": "0.51.1",
+    "react-native-typescript-transformer": "^1.2.11",
+    "react-test-renderer": "16.6.3",
+    "typescript": "^3.2.4"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}

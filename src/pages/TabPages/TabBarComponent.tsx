@@ -8,7 +8,6 @@ const TabBarComponent = (props) => {
 	return (<MaterialTopTabBar {...props} swipeDistanceThreshold={10}   getLabelText={
 		({route})=>{
 			return function ({focused, tintColor }) {
-				console.log(tintColor)
 				if(focused){
 					return (<View style={tabStyle.tabActiveStyle}>
 						<Text style={{color:tintColor,fontSize:font(42)}}>{props.getLabelText({route})}</Text>

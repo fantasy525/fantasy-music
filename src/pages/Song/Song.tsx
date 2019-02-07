@@ -7,7 +7,7 @@ class Song extends React.PureComponent{
 	componentDidMount(){
 		Http.get("http://m.kugou.com/singer/list/88",{json:true})
 			.then(res=>{
-				console.log(res.data)
+				
 			})
 	}
 	render(){

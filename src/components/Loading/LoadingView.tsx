@@ -1,18 +1,24 @@
-import {View} from 'react-native'
+import {View, ViewStyle, StyleProp} from 'react-native'
 import React,{PureComponent} from 'react'
-import LottieView from 'lottie-react-native';   
-class LoadingMan extends PureComponent{
+import LottieView from 'lottie-react-native'; 
+type Props={
+  source?:string,
+  style:StyleProp<ViewStyle>
+}
+
+class LoadingView extends PureComponent<Props>{
+  static defaultProps={
+    source:require('./runnerman.json')
+  }
     render() {
         return (
-         <View style={{flex:1,alignItems:'center',justifyContent:'center'}}>
-            <LottieView
-            style={{width:200}}
-            source={require('./runnerman.json')}
-            autoPlay
-            loop
-          />
-         </View>
+          <LottieView
+          style={[{width:200},this.props.style]}
+          source={this.props.source}
+          autoPlay
+          loop
+        />
         );
       }
 }
-export default LoadingMan
+export default LoadingView

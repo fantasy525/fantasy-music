@@ -13,7 +13,7 @@
     "lottie-react-native": "^2.5.11",
     "querystring": "^0.2.0",
     "react": "16.6.3",
-    "react-native": "0.58.1",
+    "react-native": "0.58.4",
     "react-native-gesture-handler": "^1.0.15",
     "react-native-mjrefresh": "^0.6.5",
     "react-native-smartrefreshlayout": "^0.6.5",

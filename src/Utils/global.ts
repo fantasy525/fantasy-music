@@ -31,3 +31,4 @@ global.font=(px:number):number => {
 };
 global.noop=()=>{}
 global.statusBarHeight=StatusBar.currentHeight
+

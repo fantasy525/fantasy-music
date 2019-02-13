@@ -15,6 +15,9 @@ class MusicRefreshControl extends React.PureComponent<{onRefresh:()=>void,style:
         percent:new Animated.Value(0.1),
         autoPlay:false
     }
+    componentWillUnmount(){
+        clearTimeout(this.timer)
+    }
     autoPlay:boolean=false;
     smartRefresh:RefObject<SmartRefreshControl>=React.createRef()
     lottieView:RefObject<AnimatedLottieView>=React.createRef()
@@ -29,15 +32,19 @@ class MusicRefreshControl extends React.PureComponent<{onRefresh:()=>void,style:
         onRefresh && onRefresh();
         this.lottieView.current.play()
     }
+    timer:number;
     finishRefresh=(params?:any)=>{ //完成下拉
         
         this.smartRefresh.current && this.smartRefresh.current.finishRefresh(params)
-        setTimeout(()=>{
+      
+        clearTimeout(this.timer);
+        this.timer=setTimeout(()=>{
             this.lottieView.current && this.lottieView.current.reset();
         },500)
        
     }// I am here ...
     height:number=100
+
     render(){
         return (
             <SmartRefreshControl
@@ -57,7 +64,7 @@ class MusicRefreshControl extends React.PureComponent<{onRefresh:()=>void,style:
                         }]}}>
                          <AnimatedLottieView 
                          speed={6} 
-                    
+                         progress={this.state.percent}
                          ref={this.lottieView} 
                          style={{width:this.height,height:this.height}} 
                          hardwareAccelerationAndroid

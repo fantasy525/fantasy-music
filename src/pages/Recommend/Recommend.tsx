@@ -24,6 +24,11 @@ class Recommend extends  React.PureComponent<Props,State>{
 		songMenu:[]
 	}
 	componentDidMount(){
+		setTimeout(()=>{
+			this.container.current && this.container.current.measure((x,y,width,height,pageX,pageY)=>{
+				console.log(x,y,width,height,pageX,pageY);
+			})
+		},1000)
 		getSwiperData().then(res=>{
 			this.setState({
 				banners:res
@@ -54,25 +59,26 @@ class Recommend extends  React.PureComponent<Props,State>{
 			},300)
 		})
 	}
+	container:RefObject<View>=React.createRef()
 	render(){
 		return(
 			<View style={styles.container}>
 				<View style={styles.swiperBk}/>
-				<View style={{alignItems:'center',height:dp(320),marginTop:dp(-270)}} >
+				<View style={{alignItems:'center',height:dp(320),marginTop:dp(-270)}} ref={this.container} collapsable={false}>
 					<Banner banners={this.state.banners}/>
 				</View>
-				<Text style={{fontSize:font(30),marginTop:dp(20),marginLeft:dp(20)}}>推荐歌单</Text>
-				<View style={{flex:1,overflow:'hidden'}}>
+				<Text style={{fontSize:font(30),marginTop:dp(20),marginLeft:dp(20),fontWeight:'600'}}>推荐歌单 &gt;</Text>
+				<View style={{flex:1,overflow:'hidden',marginTop:dp(20)}}>
 					<FlatList 
-					refreshControl={<MusicRefreshControl
-					style={{flex:1}}
+						refreshControl={<MusicRefreshControl
+						style={{flex:1}}
 						onRefresh={this.onRefresh}
 						ref={this.smartRefresh}/>}
-					keyExtractor={(item)=>item.id+""}
-					ListEmptyComponent={<View style={{alignItems:'center'}}><LoadingView style={{width:dp(100)}} source={require('src/LottieJson/loading-rainbow.json')}/></View> } 
-					style={{flex:1}} numColumns={3}    
-					data={this.state.songMenu} 
-					renderItem={this.renderItems}/>
+						keyExtractor={(item)=>item.id+""}
+						ListEmptyComponent={<View style={{alignItems:'center'}}><LoadingView style={{width:dp(100)}} source={require('src/LottieJson/loading-rainbow.json')}/></View> } 
+						style={{flex:1}} numColumns={3}    
+						data={this.state.songMenu} 
+						renderItem={this.renderItems}/>
 				</View>
 			</View>
 		)

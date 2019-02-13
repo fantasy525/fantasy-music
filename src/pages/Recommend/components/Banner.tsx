@@ -34,8 +34,8 @@ const Banner:React.FC<Props>=React.memo((props)=>{
         {
            props.banners.map((banner,index)=>{
                 return (
-                    <View pointerEvents={"box-only"}  key={banner.picUrl}>
-                        <Image  source={{uri:banner.picUrl}} style={styles.swiperImg}/>
+                    <View pointerEvents={"box-only"}  key={banner.imageUrl}>
+                        <Image  source={{uri:banner.imageUrl}} style={styles.swiperImg}/>
                     </View>
                 )
             })

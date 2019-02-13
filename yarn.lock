@@ -4637,14 +4637,6 @@ preserve@^0.2.0:
   resolved "https://registry.npmjs.org/preserve/-/preserve-0.2.0.tgz#815ed1f6ebc65926f865b310c0713bcb3315ce4b"
   integrity sha1-gV7R9uvGWSb4ZbMQwHE7yzMVzks=
 
-pretty-format@24.0.0-alpha.4:
-  version "24.0.0-alpha.4"
-  resolved "https://registry.npmjs.org/pretty-format/-/pretty-format-24.0.0-alpha.4.tgz#cc1f7497e2496b71f8ad99f1526096e515fada03"
-  integrity sha512-icvbBt3XlLEVqPHdHwR2Ou9+hezS9Eccd+mA+fXfOU7T9t7ClOpq2HgCwlyw+3WogccCubKWnmzyrA/3ZZ/aOA==
-  dependencies:
-    ansi-regex "^4.0.0"
-    ansi-styles "^3.2.0"
-
 pretty-format@24.0.0-alpha.6:
   version "24.0.0-alpha.6"
   resolved "https://registry.npmjs.org/pretty-format/-/pretty-format-24.0.0-alpha.6.tgz#25ad2fa46b342d6278bf241c5d2114d4376fbac1"
@@ -4779,10 +4771,10 @@ react-deep-force-update@^1.0.0:
   resolved "https://registry.npmjs.org/react-deep-force-update/-/react-deep-force-update-1.1.2.tgz#3d2ae45c2c9040cbb1772be52f8ea1ade6ca2ee1"
   integrity sha512-WUSQJ4P/wWcusaH+zZmbECOk7H5N2pOIl0vzheeornkIMhu+qrNdGFm0bDZLCb0hSF0jf/kH1SgkNGfBdTc4wA==
 
-react-devtools-core@^3.4.0:
+react-devtools-core@^3.4.2:
   version "3.6.0"
-  resolved "https://registry.npmjs.org/react-devtools-core/-/react-devtools-core-3.6.0.tgz#77009517d72594fe6e2794f5ae160646d77fc467"
-  integrity sha512-picLP5RMESANerl2Ieo2rcMmVBqTG5QgIkSGcoJqvT5V4+HpLRjz5QW8xC85i+bXLdJmjoi3ZE9qDpNa5m7S4A==
+  resolved "http://registry.npm.taobao.org/react-devtools-core/download/react-devtools-core-3.6.0.tgz#77009517d72594fe6e2794f5ae160646d77fc467"
+  integrity sha1-dwCVF9cllP5uJ5T1rhYGRtd/xGc=
   dependencies:
     shell-quote "^1.6.1"
     ws "^3.3.1"
@@ -4868,10 +4860,10 @@ react-native-typescript-transformer@^1.2.11:
     semver "^5.4.1"
     source-map "^0.5.6"
 
-react-native@0.58.1:
-  version "0.58.1"
-  resolved "https://registry.npmjs.org/react-native/-/react-native-0.58.1.tgz#3cc0563d315d0fc605f6bae341fb952e119d31c3"
-  integrity sha512-8aD0PBTney5dKQ4MBOfBEcHmdm2OBCx/9gSbeT4OUXE54fNNmDfbkVnx7EZ1iwvEdOiAl+pEpWqgAb/tvhRwBA==
+react-native@0.58.4:
+  version "0.58.4"
+  resolved "http://registry.npm.taobao.org/react-native/download/react-native-0.58.4.tgz#bb1392727712787ba84983104c4920c0f4082677"
+  integrity sha1-uxOScncSeHuoSYMQTEkgwPQIJnc=
   dependencies:
     "@babel/runtime" "^7.0.0"
     absolute-path "^0.0.0"
@@ -4911,11 +4903,11 @@ react-native@0.58.1:
     opn "^3.0.2"
     optimist "^0.6.1"
     plist "^3.0.0"
-    pretty-format "24.0.0-alpha.4"
+    pretty-format "24.0.0-alpha.6"
     promise "^7.1.1"
     prop-types "^15.5.8"
     react-clone-referenced-element "^1.0.1"
-    react-devtools-core "^3.4.0"
+    react-devtools-core "^3.4.2"
     regenerator-runtime "^0.11.0"
     rimraf "^2.5.4"
     semver "^5.0.3"

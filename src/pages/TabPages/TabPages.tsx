@@ -13,6 +13,7 @@ import {Recommend} from 'src/pages/Recommend/Recommend';
 import Player from '../Player/Player';
 import {Provider} from "react-redux";
 import {TabBarComponent} from './TabBarComponent';
+import { RankPage } from '../Rank/RankPage';
 
 
 const TabStack = createMaterialTopTabNavigator({
@@ -22,8 +23,8 @@ const TabStack = createMaterialTopTabNavigator({
 			title: '推荐'
 		}
 	},
-	Song: {
-		screen: Song,
+	RankPage: {
+		screen: RankPage,
 		navigationOptions: {
 			title: '排行'
 		}

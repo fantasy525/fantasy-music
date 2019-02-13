@@ -7,14 +7,9 @@ export interface ISwiperData{
     banners:Array<IBanner>
 }
 export interface IBanner{
-	backgroundUrl: string
-	monitorClick: string
-	monitorImpress: string
-	monitorType: string
-	picUrl: string
-	targetId: string
-	targetType: string
-	url: string
+	
+	imageUrl: string
+
 }
 
 export interface IRecommendSongMenu{

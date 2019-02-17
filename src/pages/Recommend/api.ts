@@ -69,15 +69,13 @@ function getRecommendSongMenu():Promise<Array<IRecommendSongMenu>>{
             n: 1000
         })
         .then(res=>{
-
 			if(res&&res.code===200){
-                console.log('lalalala')
 				resolve(res.result)
 			}else{
                 reject([])
                 ToastAndroid.show("数据获取失败",ToastAndroid.SHORT)
             }
-            console.log('lalalala')
+        
 		})
     })
    

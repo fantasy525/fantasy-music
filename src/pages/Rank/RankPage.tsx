@@ -5,7 +5,7 @@ import { MusicRefreshControl } from '../Recommend/components/RefreshControl';
 import { Http, BASE_URL } from 'src/Utils/Http';
 import  axios  from 'axios';
 import QueryString from 'querystring'
-import { topList ,getRankList, TopListIdEnum} from './api';
+import { getRankList, TopListIdEnum} from './api';
 import { IRankList } from './interface';
 
 
@@ -21,7 +21,6 @@ class RankPage extends React.PureComponent<{},State>{
     }
     componentDidMount(){
       getRankList(TopListIdEnum.云音乐嘻哈榜).then(res=>{
-          console.log(res)
           this.setState({
               rankData1:res
           })

@@ -10,6 +10,10 @@ import { SongMenuItem } from './components/SongMenuItem';
 import LoadingView from 'src/components/Loading/LoadingView';
 import {SmartRefreshControl,DefaultHeader} from 'react-native-smartrefreshlayout';
 import { MusicRefreshControl } from './components/RefreshControl';
+import { SongMenu } from './components/SongMenu';
+import { FourButtonList } from './components/FourButton';
+import { DayContext } from './components/DayContext';
+
 
 type State={
 	banners:Array<IBanner>,
@@ -24,11 +28,6 @@ class Recommend extends  React.PureComponent<Props,State>{
 		songMenu:[]
 	}
 	componentDidMount(){
-		setTimeout(()=>{
-			this.container.current && this.container.current.measure((x,y,width,height,pageX,pageY)=>{
-				console.log(x,y,width,height,pageX,pageY);
-			})
-		},1000)
 		getSwiperData().then(res=>{
 			this.setState({
 				banners:res
@@ -39,25 +38,9 @@ class Recommend extends  React.PureComponent<Props,State>{
 				songMenu:res
 			})
 		})
-		
 	}
 	handlePress=()=>{
 		this.props.navigation.navigate("Player")
-	}
-	renderItems=({item,index}:ListRenderItemInfo<IRecommendSongMenu>)=>{
-		return(<SongMenuItem index={index} {...item}  />)
-	}
-	smartRefresh:RefObject<MusicRefreshControl>=React.createRef()
-	onRefresh=()=>{
-		getRecommendSongMenu().then(res=>{
-			this.setState({
-				songMenu:res
-			})
-			
-			setTimeout(()=>{
-				this.smartRefresh.current.finishRefresh()
-			},300)
-		})
 	}
 	container:RefObject<View>=React.createRef()
 	render(){
@@ -67,18 +50,15 @@ class Recommend extends  React.PureComponent<Props,State>{
 				<View style={{alignItems:'center',height:dp(320),marginTop:dp(-270)}} ref={this.container} collapsable={false}>
 					<Banner banners={this.state.banners}/>
 				</View>
+				{/* 四个小按钮,私人fm,每日推荐，歌单 */}
+				<View style={{padding:dp(50)}}>
+					<DayContext.Provider value={new Date().getDate()}>
+						<FourButtonList/>
+					</DayContext.Provider>
+				</View>
 				<Text style={{fontSize:font(30),marginTop:dp(20),marginLeft:dp(20),fontWeight:'600'}}>推荐歌单 &gt;</Text>
 				<View style={{flex:1,overflow:'hidden',marginTop:dp(20)}}>
-					<FlatList 
-						refreshControl={<MusicRefreshControl
-						style={{flex:1}}
-						onRefresh={this.onRefresh}
-						ref={this.smartRefresh}/>}
-						keyExtractor={(item)=>item.id+""}
-						ListEmptyComponent={<View style={{alignItems:'center'}}><LoadingView style={{width:dp(100)}} source={require('src/LottieJson/loading-rainbow.json')}/></View> } 
-						style={{flex:1}} numColumns={3}    
-						data={this.state.songMenu} 
-						renderItem={this.renderItems}/>
+					<SongMenu songMenu={this.state.songMenu}/>
 				</View>
 			</View>
 		)

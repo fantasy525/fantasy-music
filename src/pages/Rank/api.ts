@@ -33,7 +33,7 @@ function getRankList(id:string):Promise<IRankList>{
             n:100
         }).then(res=>{
             if(res&&res.code===200){
-               
+             
                 resolve(res.playlist)
             }else{
                 ToastAndroid.show("数据获取失败",ToastAndroid.SHORT)

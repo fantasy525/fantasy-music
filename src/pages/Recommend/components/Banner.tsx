@@ -15,7 +15,6 @@ type Props={
  */
 const Banner:React.FC<Props>=React.memo((props)=>{
     if(props.banners.length===0){
-       
         return <LoadingView style={{width:dp(200)}} source={require('src/LottieJson/loadingCircle.json')}/>
     }
     return(

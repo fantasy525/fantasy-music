@@ -1,4 +1,6 @@
-
+/**
+ * 下拉刷新控件，使用smartControl
+ */
 import React, { RefObject } from 'react'
 
 import {View,Text, StyleProp, ViewStyle, Animated} from 'react-native'

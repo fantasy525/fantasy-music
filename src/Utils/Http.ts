@@ -16,7 +16,6 @@ const NETEASE_CLOUD_HEADER_CONFIG={
 const COMMON_CONFIG={
 	headers:NETEASE_CLOUD_HEADER_CONFIG,
 	transformRequest:function(data){
-		console.log(`${QueryString.stringify(data)}`)
 		return  `${QueryString.stringify(data)}`
 	}
 }
